@@ -55,5 +55,13 @@ Codeigniter 4 menyediakan fitur debugging untuk memudahkan developer untuk menge
 
 Secara default fitur ini belum aktif. Ketika terjadi erorr pada aplikasi akan ditampilkan pesan seperti berikut
 
+![7](img/7.png)
+
+Semua jenis erorr akan ditampilkan sama. Untuk memudahkan mengetahui jenis erorrnya, maka perlu diaktifkan mode debugging dengan mengubah nilai konfigurasi pada environment variable CI_ENVIRONMENT menjadi development.
+
+## 7 Ubah nama file env menjadi .env kemudian buka file tersebut dan ubah nilai variable CI``_ENVIRONMENT menjadi development.
+
+![8](img/8.png)
+
 
 
