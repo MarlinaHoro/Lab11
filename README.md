@@ -65,3 +65,22 @@ Semua jenis erorr akan ditampilkan sama. Untuk memudahkan mengetahui jenis erorr
 
 
 
+
+ontoh erorr yang terjadi. Untuk mencoba erorr tersebut, ubah kode pada file app/Controller/Home.php hilangkan titik koma pada akhir kode.
+
+![10](img/10.png)
+
+
+## 7. Membuat rute Baru
+
+Tambahkan kode berikut di dalam Routes.php
+
+$routes->get('/about', 'Page::about');
+$routes->get('/contact', 'Page::contact');
+$routes->get('/faqs', 'Page::faqs');
+
+![11](img/11.png)
+
+
+
+
