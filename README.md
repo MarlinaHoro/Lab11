@@ -75,9 +75,7 @@ ontoh erorr yang terjadi. Untuk mencoba erorr tersebut, ubah kode pada file app/
 
 Tambahkan kode berikut di dalam Routes.php
 
-$routes->get('/about', 'Page::about');
-$routes->get('/contact', 'Page::contact');
-$routes->get('/faqs', 'Page::faqs');
+
 
 ![11](img/11.png)
 
