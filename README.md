@@ -77,6 +77,26 @@ Tambahkan kode berikut di dalam Routes.php
 
 ![11.png](ci4/public/img/11.png)
 
+## 9. Buat file baru dengan nama about.php pada direktori view (app/view/about.php)
+
+![19.png](ci4/public/img/19.png)
+
+Ubah method about pada class Controller Page
+
+![14.png](ci4/public/img/14.png)
+
+![13.png](ci4/public/img/13.png)
+
+halaman about
+
+![17.png](ci4/public/img/17.png)
+
+## 10. membuat file baru dengan contact.php
+
+![20.png](ci4/public/img/20.png)
 
 
+halaman contact 
+
+![18.png](ci4/public/img/18.png)
 
