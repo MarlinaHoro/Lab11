@@ -7,7 +7,8 @@
             <?php if ($artikel) : foreach ($artikel as $row) : ?>
                     <article class="entry">
                         <h2 class="judul_artikel">
-                            <a href="<?= base_url('/artikel/' . $row['slug']); ?>">
+                            <a href="<?= base_url('/
+                            artikel/' . $row['slug']); ?>">
                                 <?= $row['judul']; ?>
                             </a>
                         </h2>
@@ -21,6 +22,4 @@
                     <h2>Belum ada data.</h2>
                 </article> <?php endif; ?>
         </section>
-
-
         <?= $this->include('tamplate/footer1'); ?>
