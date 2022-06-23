@@ -42,6 +42,8 @@ $routes->get('/artikel/index', 'Artikel::index');
 $routes->get('/artikel/(:any)', 'Artikel::view/$1');
 $routes->get('/faqs', 'Page::faqs');
 
+
+
 $routes->group('admin', function ($routes) {
     $routes->get('artikel', 'Artikel::admin_index');
     $routes->add('artikel/add', 'Artikel::add');
