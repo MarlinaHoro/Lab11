@@ -1,11 +1,12 @@
-<?= $this->include('tamplate/admin_header'); ?>
-<table class="table">
+<?= $this->include('template/admin_header'); ?>
+
+<table class="table" id="customers">
     <thead>
         <tr>
             <th>ID</th>
             <th>Judul</th>
             <th>Status</th>
-            <th>AKsi</th>
+            <th>Aksi</th>
         </tr>
     </thead>
     <tbody>
@@ -18,10 +19,8 @@
                     </td>
                     <td><?= $row['status']; ?></td>
                     <td>
-                        <a class="btn" href="<?= base_url('/admin/artikel/edit/' .
-                                                    $row['id']); ?>">Ubah</a>
-                        <a class="btn btn-danger" onclick="return confirm('Yakin menghapus data?');" href="<?= base_url('/admin/artikel/delete/' .
-                                                                                                                $row['id']); ?>">Hapus</a>
+                        <a class="btn" id="ubah" href="<?= base_url('/admin/artikel/edit/' . $row['id']); ?>">Ubah</a>
+                        <a class="btn" id="hapus" onclick="return confirm('Yakin menghapus data?');" href="<?= base_url('/admin/artikel/delete/' . $row['id']); ?>">Hapus</a>
                     </td>
                 </tr>
             <?php endforeach;
@@ -36,8 +35,9 @@
             <th>ID</th>
             <th>Judul</th>
             <th>Status</th>
-            <th>AKsi</th>
+            <th>Asksi</th>
         </tr>
     </tfoot>
 </table>
-<?= $this->include('tamplate/admin_footer'); ?>
+
+<?= $this->include('template/admin_footer'); ?>

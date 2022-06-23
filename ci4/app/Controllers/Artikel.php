@@ -9,21 +9,18 @@ class Artikel extends BaseController
 {
     public function index()
     {
+        $title = 'Daftar Artikel';
         $model = new ArtikelModel();
-        $data = [
-            'artikel' => $model->findAll()
-        ];
-        return view('artikel/index', $data);
+        $artikel = $model->findAll();
+        return view('artikel/index', compact('artikel', 'title'));
     }
 
-
+    // Untuk Artikel
     public function view($slug)
     {
         $model = new ArtikelModel();
-        $artikel = $model->where([
-            'slug' => $slug
-        ])->first();
-        // Menampilkan error apabila data tidak ada.
+        $artikel = $model->where(['slug' => $slug])->first();
+        // Menampilkan error apabila data tidak ada. 
         if (!$artikel) {
             throw PageNotFoundException::forPageNotFound();
         }
@@ -31,7 +28,7 @@ class Artikel extends BaseController
         return view('artikel/detail', compact('artikel', 'title'));
     }
 
-
+    // Menu Admin
     public function admin_index()
     {
         $title = 'Daftar Artikel';
@@ -40,13 +37,14 @@ class Artikel extends BaseController
         return view('artikel/admin_index', compact('artikel', 'title'));
     }
 
-
+    // ADD
     public function add()
     {
-        // validasi data.
+        // Validasi data
         $validation = \Config\Services::validation();
         $validation->setRules(['judul' => 'required']);
         $isDataValid = $validation->withRequest($this->request)->run();
+
         if ($isDataValid) {
             $artikel = new ArtikelModel();
             $artikel->insert([
@@ -60,30 +58,31 @@ class Artikel extends BaseController
         return view('artikel/form_add', compact('title'));
     }
 
-
-
+    // Edit
     public function edit($id)
     {
         $artikel = new ArtikelModel();
-        // validasi data.
+
         $validation = \Config\Services::validation();
         $validation->setRules(['judul' => 'required']);
         $isDataValid = $validation->withRequest($this->request)->run();
+
         if ($isDataValid) {
-            $artikel->update($id, [
-                'judul' => $this->request->getPost('judul'),
-                'isi' => $this->request->getPost('isi'),
-            ]);
+            $artikel->update(
+                $id,
+                [
+                    'judul' => $this->request->getPost('judul'),
+                    'isi' => $this->request->getPost('isi'),
+                ]
+            );
             return redirect('admin/artikel');
         }
-        // ambil data lama
         $data = $artikel->where('id', $id)->first();
-        $title = "Edit Artikel";
+        $title = "Edit artikel";
         return view('artikel/form_edit', compact('title', 'data'));
     }
 
-
-
+    // Delete
     public function delete($id)
     {
         $artikel = new ArtikelModel();
