@@ -31,6 +31,8 @@ Database seeder digunakan untuk membuat data dummy. Untuk keperluan ujicoba modu
 6. Uji Coba Login
 Selanjutnya buka url http://localhost:8080/user/login seperti berikut:
 
+![7.png](img/7.png)
+
 
 
 7. Menambahkan Auth Filter
